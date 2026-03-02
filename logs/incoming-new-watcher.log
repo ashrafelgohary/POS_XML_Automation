@@ -1,0 +1,289 @@
+2026-03-02 21:56:46 watcher started for /home/alshaya/POS_Visa_Automation/incoming/new
+2026-03-02 21:59:07 watcher started for /home/alshaya/POS_Visa_Automation/incoming/new
+2026-03-02 22:00:49 detected new file: /home/alshaya/POS_Visa_Automation/incoming/new/MarshalPOS-242FFA140FC9.XML
+2026-03-02 22:00:49 running staging: stage_pos_xmls.py
+[OK] MarshalPOS-242FFA140FC9.XML → pos-configs/242FFA140FC9.xml
+Staged for MACs: 242FFA140FC9
+2026-03-02 22:00:49 running ansible-playbook
+/usr/local/bin/watch_incoming_new.sh: line 29: ansible-playbook: command not found
+2026-03-02 22:06:45 watcher started for /home/alshaya/POS_Visa_Automation/incoming/new
+2026-03-02 22:07:24 detected new file: /home/alshaya/POS_Visa_Automation/incoming/new/MarshalPOS-242FFA140FC9.XML
+2026-03-02 22:07:24 running staging: stage_pos_xmls.py
+[OK] MarshalPOS-242FFA140FC9.XML → pos-configs/242FFA140FC9.xml
+Staged for MACs: 242FFA140FC9
+2026-03-02 22:07:24 running ansible-playbook
+
+PLAY [Deploy VISA XML as MarshalPOS.XML and reboot if changed] *****************
+
+TASK [Discover MAC address on POS (eno1)] **************************************
+/home/alshaya/.pyenv/versions/3.6.15/lib/python3.6/site-packages/ansible/parsing/vault/__init__.py:44: CryptographyDeprecationWarning: Python 3.6 is no longer supported by the Python core team. Therefore, support for it is deprecated in cryptography. The next release of cryptography will remove support for Python 3.6.
+  from cryptography.exceptions import InvalidSignature
+[WARNING]: Platform linux on host pos-001 is using the discovered Python
+interpreter at /usr/bin/python, but future installation of another Python
+interpreter could change this. See https://docs.ansible.com/ansible/2.9/referen
+ce_appendices/interpreter_discovery.html for more information.
+ok: [pos-001]
+
+TASK [Normalize MAC] ***********************************************************
+ok: [pos-001]
+
+TASK [Ensure staged XML exists on controller] **********************************
+ok: [pos-001 -> localhost]
+
+TASK [Fail if bank XML missing for this POS] ***********************************
+skipping: [pos-001]
+
+TASK [Ensure destination directory exists on POS] ******************************
+ok: [pos-001]
+
+TASK [Check if current config exists on POS] ***********************************
+ok: [pos-001]
+
+TASK [Backup current file to controller (fetch)] *******************************
+changed: [pos-001]
+
+TASK [Deploy XML as MarshalPOS.XML] ********************************************
+changed: [pos-001]
+
+TASK [Set owner to epos] *******************************************************
+changed: [pos-001]
+
+TASK [Initiate reboot] *********************************************************
+changed: [pos-001]
+
+TASK [Wait for POS to be reachable after reboot] *******************************
+ok: [pos-001]
+
+TASK [Summary] *****************************************************************
+ok: [pos-001] => {
+    "msg": "pos-001 (MAC 242FFA140FC9) → /var/epos/bin/MarshalPOS.XML changed=True"
+}
+
+PLAY RECAP *********************************************************************
+pos-001                    : ok=11   changed=4    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+2026-03-02 22:08:39 completed processing for /home/alshaya/POS_Visa_Automation/incoming/new/MarshalPOS-242FFA140FC9.XML
+2026-03-02 22:34:32 detected new file: /home/alshaya/POS_Visa_Automation/incoming/new/MarshalPOS-242FFA140FC9.XML
+2026-03-02 22:34:32 running staging: stage_pos_xmls.py
+[OK] MarshalPOS-242FFA140FC9.XML → pos-configs/242FFA140FC9.xml
+Staged for MACs: 242FFA140FC9
+2026-03-02 22:34:32 running ansible-playbook
+
+PLAY [Deploy VISA XML as MarshalPOS.XML and reboot if changed] *****************
+
+TASK [Discover MAC address on POS (eno1)] **************************************
+/home/alshaya/.pyenv/versions/3.6.15/lib/python3.6/site-packages/ansible/parsing/vault/__init__.py:44: CryptographyDeprecationWarning: Python 3.6 is no longer supported by the Python core team. Therefore, support for it is deprecated in cryptography. The next release of cryptography will remove support for Python 3.6.
+  from cryptography.exceptions import InvalidSignature
+[WARNING]: Platform linux on host pos-001 is using the discovered Python
+interpreter at /usr/bin/python, but future installation of another Python
+interpreter could change this. See https://docs.ansible.com/ansible/2.9/referen
+ce_appendices/interpreter_discovery.html for more information.
+ok: [pos-001]
+
+TASK [Normalize MAC] ***********************************************************
+ok: [pos-001]
+
+TASK [Ensure staged XML exists on controller] **********************************
+ok: [pos-001 -> localhost]
+
+TASK [Fail if bank XML missing for this POS] ***********************************
+skipping: [pos-001]
+
+TASK [Ensure destination directory exists on POS] ******************************
+ok: [pos-001]
+
+TASK [Check if current config exists on POS] ***********************************
+ok: [pos-001]
+
+TASK [Backup current file to controller (fetch)] *******************************
+changed: [pos-001]
+
+TASK [Deploy XML as MarshalPOS.XML] ********************************************
+changed: [pos-001]
+
+TASK [Set owner to epos] *******************************************************
+changed: [pos-001]
+
+TASK [Initiate reboot] *********************************************************
+changed: [pos-001]
+
+TASK [Wait for POS to be reachable after reboot] *******************************
+ok: [pos-001]
+
+TASK [Summary] *****************************************************************
+ok: [pos-001] => {
+    "msg": "pos-001 (MAC 242FFA140FC9) → /var/epos/bin/MarshalPOS.XML changed=True"
+}
+
+PLAY RECAP *********************************************************************
+pos-001                    : ok=11   changed=4    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+2026-03-02 22:36:00 completed processing for /home/alshaya/POS_Visa_Automation/incoming/new/MarshalPOS-242FFA140FC9.XML
+2026-03-02 22:51:04 detected new file: /home/alshaya/POS_Visa_Automation/incoming/new/MarshalPOS-242FFA140FC9.XML
+2026-03-02 22:51:04 running staging: stage_pos_xmls.py
+[OK] MarshalPOS-242FFA140FC9.XML → pos-configs/242FFA140FC9.xml
+Staged for MACs: 242FFA140FC9
+2026-03-02 22:51:04 running ansible-playbook
+
+PLAY [Deploy VISA XML as MarshalPOS.XML and reboot if changed] *****************
+
+TASK [Discover MAC address on POS (eno1)] **************************************
+/home/alshaya/.pyenv/versions/3.6.15/lib/python3.6/site-packages/ansible/parsing/vault/__init__.py:44: CryptographyDeprecationWarning: Python 3.6 is no longer supported by the Python core team. Therefore, support for it is deprecated in cryptography. The next release of cryptography will remove support for Python 3.6.
+  from cryptography.exceptions import InvalidSignature
+[WARNING]: Platform linux on host pos-001 is using the discovered Python
+interpreter at /usr/bin/python, but future installation of another Python
+interpreter could change this. See https://docs.ansible.com/ansible/2.9/referen
+ce_appendices/interpreter_discovery.html for more information.
+ok: [pos-001]
+
+TASK [Normalize MAC] ***********************************************************
+ok: [pos-001]
+
+TASK [Ensure staged XML exists on controller] **********************************
+ok: [pos-001 -> localhost]
+
+TASK [Fail if bank XML missing for this POS] ***********************************
+skipping: [pos-001]
+
+TASK [Ensure destination directory exists on POS] ******************************
+ok: [pos-001]
+
+TASK [Check if current config exists on POS] ***********************************
+ok: [pos-001]
+
+TASK [Backup current file to controller (fetch)] *******************************
+changed: [pos-001]
+
+TASK [Deploy XML as MarshalPOS.XML] ********************************************
+changed: [pos-001]
+
+TASK [Set owner to epos] *******************************************************
+changed: [pos-001]
+
+TASK [Initiate reboot] *********************************************************
+changed: [pos-001]
+
+TASK [Wait for POS to be reachable after reboot] *******************************
+ok: [pos-001]
+
+TASK [Summary] *****************************************************************
+ok: [pos-001] => {
+    "msg": "pos-001 (MAC 242FFA140FC9) → /var/epos/bin/MarshalPOS.XML changed=True"
+}
+
+PLAY RECAP *********************************************************************
+pos-001                    : ok=11   changed=4    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+2026-03-02 22:52:15 completed processing for /home/alshaya/POS_Visa_Automation/incoming/new/MarshalPOS-242FFA140FC9.XML
+2026-03-02 22:53:14 detected new file: /home/alshaya/POS_Visa_Automation/incoming/new/MarshalPOS-242FFA140FC9.XML
+2026-03-02 22:53:14 running staging: stage_pos_xmls.py
+[OK] MarshalPOS-242FFA140FC9.XML → pos-configs/242FFA140FC9.xml
+Staged for MACs: 242FFA140FC9
+2026-03-02 22:53:14 running ansible-playbook
+
+PLAY [Deploy VISA XML as MarshalPOS.XML and reboot if changed] *****************
+
+TASK [Discover MAC address on POS (eno1)] **************************************
+/home/alshaya/.pyenv/versions/3.6.15/lib/python3.6/site-packages/ansible/parsing/vault/__init__.py:44: CryptographyDeprecationWarning: Python 3.6 is no longer supported by the Python core team. Therefore, support for it is deprecated in cryptography. The next release of cryptography will remove support for Python 3.6.
+  from cryptography.exceptions import InvalidSignature
+[WARNING]: Platform linux on host pos-001 is using the discovered Python
+interpreter at /usr/bin/python, but future installation of another Python
+interpreter could change this. See https://docs.ansible.com/ansible/2.9/referen
+ce_appendices/interpreter_discovery.html for more information.
+ok: [pos-001]
+
+TASK [Normalize MAC] ***********************************************************
+ok: [pos-001]
+
+TASK [Ensure staged XML exists on controller] **********************************
+ok: [pos-001 -> localhost]
+
+TASK [Fail if bank XML missing for this POS] ***********************************
+skipping: [pos-001]
+
+TASK [Ensure destination directory exists on POS] ******************************
+ok: [pos-001]
+
+TASK [Check if current config exists on POS] ***********************************
+ok: [pos-001]
+
+TASK [Backup current file to controller (fetch)] *******************************
+changed: [pos-001]
+
+TASK [Deploy XML as MarshalPOS.XML] ********************************************
+changed: [pos-001]
+
+TASK [Set owner to epos] *******************************************************
+changed: [pos-001]
+
+TASK [Initiate reboot] *********************************************************
+changed: [pos-001]
+
+TASK [Wait for POS to be reachable after reboot] *******************************
+ok: [pos-001]
+
+TASK [Summary] *****************************************************************
+ok: [pos-001] => {
+    "msg": "pos-001 (MAC 242FFA140FC9) → /var/epos/bin/MarshalPOS.XML changed=True"
+}
+
+PLAY RECAP *********************************************************************
+pos-001                    : ok=11   changed=4    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+2026-03-02 22:54:38 completed processing for /home/alshaya/POS_Visa_Automation/incoming/new/MarshalPOS-242FFA140FC9.XML
+2026-03-02 23:56:50 detected new file: /home/alshaya/POS_Visa_Automation/incoming/new/MarshalPOS-242FFA140FC9.XML
+2026-03-02 23:56:50 running staging: stage_pos_xmls.py
+[OK] MarshalPOS-242FFA140FC9.XML → pos-configs/242FFA140FC9.xml
+Staged for MACs: 242FFA140FC9
+2026-03-02 23:56:50 running ansible-playbook
+
+PLAY [Deploy VISA XML as MarshalPOS.XML and reboot if changed] *****************
+
+TASK [Discover MAC address on POS (eno1)] **************************************
+/home/alshaya/.pyenv/versions/3.6.15/lib/python3.6/site-packages/ansible/parsing/vault/__init__.py:44: CryptographyDeprecationWarning: Python 3.6 is no longer supported by the Python core team. Therefore, support for it is deprecated in cryptography. The next release of cryptography will remove support for Python 3.6.
+  from cryptography.exceptions import InvalidSignature
+[WARNING]: Platform linux on host pos-001 is using the discovered Python
+interpreter at /usr/bin/python, but future installation of another Python
+interpreter could change this. See https://docs.ansible.com/ansible/2.9/referen
+ce_appendices/interpreter_discovery.html for more information.
+ok: [pos-001]
+
+TASK [Normalize MAC] ***********************************************************
+ok: [pos-001]
+
+TASK [Ensure staged XML exists on controller] **********************************
+ok: [pos-001 -> localhost]
+
+TASK [Fail if bank XML missing for this POS] ***********************************
+skipping: [pos-001]
+
+TASK [Ensure destination directory exists on POS] ******************************
+ok: [pos-001]
+
+TASK [Check if current config exists on POS] ***********************************
+ok: [pos-001]
+
+TASK [Backup current file to controller (fetch)] *******************************
+changed: [pos-001]
+
+TASK [Deploy XML as MarshalPOS.XML] ********************************************
+changed: [pos-001]
+
+TASK [Set owner to epos] *******************************************************
+changed: [pos-001]
+
+TASK [Initiate reboot] *********************************************************
+changed: [pos-001]
+
+TASK [Wait for POS to be reachable after reboot] *******************************
+ok: [pos-001]
+
+TASK [Summary] *****************************************************************
+ok: [pos-001] => {
+    "msg": "pos-001 (MAC 242FFA140FC9) → /var/epos/bin/MarshalPOS.XML changed=True"
+}
+
+PLAY RECAP *********************************************************************
+pos-001                    : ok=11   changed=4    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+2026-03-02 23:58:05 completed processing for /home/alshaya/POS_Visa_Automation/incoming/new/MarshalPOS-242FFA140FC9.XML

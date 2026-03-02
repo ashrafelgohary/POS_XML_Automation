@@ -1,0 +1,101 @@
+
+- name: Deploy VISA XML as MarshalPOS.XML and reboot if changed
+  hosts: pos
+  gather_facts: false
+  become: true
+  any_errors_fatal: false
+  strategy: linear
+  serial: 20   # Process 20 POS at a time; adjust for your environment
+
+  tasks:
+    # 1) Discover MAC address on POS
+    - name: Discover MAC address on POS (eno1)
+      shell: "{{ pos_mac_cmd }}"
+      register: mac_out
+      changed_when: false
+      failed_when: mac_out.rc != 0 or (mac_out.stdout | trim) == ""
+
+    # 2) Normalize MAC
+    - name: Normalize MAC
+      set_fact:
+        pos_mac_norm: "{{ (mac_out.stdout | trim) | regex_replace('[^0-9A-Fa-f]', '') | upper }}"
+
+    # 3) Check staged XML exists on controller
+    - name: Ensure staged XML exists on controller
+      stat:
+        path: "{{ pos_configs_dir }}/{{ pos_mac_norm }}.xml"
+      register: src
+      delegate_to: localhost
+
+    # 4) Fail early if missing
+    - name: Fail if bank XML missing for this POS
+      fail:
+        msg: "No staged XML found for MAC {{ pos_mac_norm }} at {{ pos_configs_dir }}/{{ pos_mac_norm }}.xml"
+      when: not src.stat.exists
+      delegate_to: localhost
+
+    # 5) Ensure destination directory exists on POS
+    - name: Ensure destination directory exists on POS
+      file:
+        path: "{{ pos_config_dest | dirname }}"
+        state: directory
+        owner: root
+        group: root
+        mode: "0755"
+
+    # 6) Backup current file to controller if present (best-effort)
+    - name: Check if current config exists on POS
+      stat:
+        path: "{{ pos_config_dest }}"
+      register: pos_cfg_stat
+
+    - name: Backup current file to controller (fetch)
+      fetch:
+        src: "{{ pos_config_dest }}"
+        dest: "{{ backup_dir | default('backups/pos-configs') }}/{{ inventory_hostname }}/{{ pos_config_dest | basename }}.bak-{{ lookup('pipe','date +%Y%m%d%H%M%S') }}"
+        flat: true
+      when: pos_cfg_stat.stat.exists
+      ignore_errors: true
+
+    # 7) Deploy XML as MarshalPOS.XML
+    - name: Deploy XML as MarshalPOS.XML
+      copy:
+        src: "{{ pos_configs_dir }}/{{ pos_mac_norm }}.xml"   # from controller
+        dest: "{{ pos_config_dest }}"                         # to POS
+        owner: root
+        group: root
+        mode: "0644"
+      register: copyres
+
+    # 8) Apply required ownership and permissions
+    - name: Set owner to epos
+      file:
+        path: "{{ pos_config_dest }}"
+        owner: epos
+        group: epos
+        mode: "0666"
+      when: copyres.changed
+
+    # 9) Reboot if config changed
+    - name: Reboot if config changed
+      when: (reboot_on_change | default(true)) and copyres.changed
+      block:
+        - name: Initiate reboot
+          reboot:
+            msg: "POS reboot triggered by VISA XML update"
+            reboot_timeout: 900
+            pre_reboot_delay: 0
+            post_reboot_delay: 10
+            test_command: "true"
+
+        - name: Wait for POS to be reachable after reboot
+          wait_for_connection:
+            delay: 5
+            timeout: 300
+
+    # 10) Summary
+    - name: Summary
+      debug:
+        msg: >-
+          {{ inventory_hostname }} (MAC {{ pos_mac_norm }}) → {{ pos_config_dest }}
+          changed={{ copyres.changed }}
