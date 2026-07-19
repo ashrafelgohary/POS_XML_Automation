@@ -1,0 +1,87 @@
+services:
+  ansible-runner:
+    build:
+      context: .
+      dockerfile: ansible/Dockerfile
+    container_name: pos-xml-ansible
+    restart: unless-stopped
+
+    environment:
+      PROJECT_ROOT: /app
+      ANSIBLE_INVENTORY: /app/inventory/hosts.yml
+      ANSIBLE_PLAYBOOK: /app/ansible/site.yml
+      STAGING_SCRIPT: /app/scripts/stage_pos_xmls.py
+      INCOMING_DIRECTORY: /app/incoming/new
+      LOG_DIRECTORY: /app/logs
+      RUNNER_API_TOKEN: ${RUNNER_API_TOKEN:?RUNNER_API_TOKEN is required}
+      ANSIBLE_HOST_KEY_CHECKING: "True"
+
+    volumes:
+      - ./ansible:/app/ansible:ro
+      - ./scripts:/app/scripts:ro
+      - ./inventory:/app/inventory:ro
+      - ./incoming:/app/incoming
+      - ./pos-configs:/app/pos-configs
+      - ./logs:/app/logs
+      - ./secrets/known_hosts:/home/ansible/.ssh/known_hosts:ro
+
+    networks:
+      - pos-automation
+
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - >-
+          import urllib.request;
+          urllib.request.urlopen(
+          'http://localhost:8000/health',
+          timeout=5)
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+    security_opt:
+      - no-new-privileges:false
+
+  gui-upload:
+    build:
+      context: ./gui_upload
+      dockerfile: Dockerfile
+    container_name: pos-xml-gui
+    restart: unless-stopped
+
+    depends_on:
+      ansible-runner:
+        condition: service_healthy
+
+    environment:
+      ANSIBLE_API_URL: http://ansible-runner:8000
+      RUNNER_API_TOKEN: ${RUNNER_API_TOKEN:?RUNNER_API_TOKEN is required}
+      UPLOAD_DIRECTORY: /app/incoming/new
+      FLASK_SECRET_KEY: ${FLASK_SECRET_KEY}
+      MAX_CONTENT_LENGTH: "10485760"
+
+    ports:
+      - "5000:5000"
+
+    volumes:
+      - ./incoming:/app/incoming
+      - ./logs:/app/logs:ro
+
+    networks:
+      - pos-automation
+
+    security_opt:
+      - no-new-privileges:true
+
+    read_only: true
+
+    tmpfs:
+      - /tmp
+
+networks:
+  pos-automation:
+    driver: bridge

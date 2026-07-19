@@ -1,0 +1,11 @@
+services:
+  ansible-runner:
+    command:
+      - uvicorn
+      - runner_api:app
+      - --app-dir
+      - /app/ansible
+      - --host
+      - 0.0.0.0
+      - --port
+      - "8000"

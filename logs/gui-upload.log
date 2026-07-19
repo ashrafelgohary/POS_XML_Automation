@@ -1,0 +1,24 @@
+2026-07-16 22:04:28,265 | WARNING | Request rejected: DOCTYPE and ENTITY declarations are not allowed.
+2026-07-16 22:05:23,432 | WARNING | Request rejected: DOCTYPE and ENTITY declarations are not allowed.
+2026-07-16 22:12:25,940 | WARNING | Request rejected: DOCTYPE and ENTITY declarations are not allowed.
+2026-07-16 22:15:34,948 | WARNING | Request rejected: DOCTYPE and ENTITY declarations are not allowed.
+2026-07-16 22:20:18,195 | WARNING | Request rejected: Ansible Runner rejected the request: Invalid API token
+2026-07-16 22:31:26,787 | WARNING | Request rejected: Ansible Runner rejected the request: Invalid API token
+2026-07-16 22:36:41,222 | WARNING | Request rejected: Ansible Runner rejected the request: Invalid API token
+2026-07-16 22:38:25,429 | WARNING | Request rejected: Ansible Runner rejected the request: Invalid API token
+2026-07-16 22:50:55,564 | WARNING | Request rejected: Ansible Runner rejected the request: Invalid API token
+2026-07-16 23:04:33,840 | INFO | Deployment target=pos-001 file=MarshalPOS-242FFA156544-20260716-230433-fb51ba17.xml status=failed execution_id=b0153f47-dc37-406a-aa97-10c415506562
+2026-07-16 23:06:11,763 | INFO | Deployment target=pos-001 file=MarshalPOS-242FFA156544-20260716-230611-4b71be2f.xml status=failed execution_id=e44002a9-73cc-4f94-88a3-e2462ae87884
+2026-07-17 11:41:47,229 | INFO | Deployment target=pos-001 file=MarshalPOS-242FFA156544-20260717-114146-924f24b0.xml status=failed execution_id=d1d45203-2601-4a8a-92ce-e3298a21a1cc
+2026-07-17 11:41:59,305 | INFO | Deployment target=pos-001 file=MarshalPOS-242FFA156544-20260717-114159-7b989d6b.xml status=failed execution_id=88c0b850-6245-4af5-b0e4-49b44af866db
+2026-07-17 11:46:53,968 | INFO | Deployment target=pos-001 file=MarshalPOS-242FFA156544-20260717-114653-cd4e9104.xml status=failed execution_id=b1cc0c24-80f1-42c6-b110-39a99e487026
+2026-07-17 11:48:53,252 | INFO | Deployment target=pos-001 file=MarshalPOS-242FFA156544-20260717-114853-3ca9c71b.xml status=failed execution_id=3d2cfa7f-2dc6-44c2-a93f-17c110c87137
+2026-07-17 14:14:06,900 | INFO | Deployment target=pos-001 file=MarshalPOS-242FFA156998-20260717-141406-69679a0b.xml status=failed execution_id=00325ce7-f382-4602-a4fd-7608d9b9ec3f
+2026-07-18 17:40:03,694 | WARNING | Request rejected: [Errno 13] Permission denied: '/app/incoming/new/MarshalPOS-242FFA156998-20260718-174003-f3c5363f.xml'
+2026-07-18 17:44:56,801 | WARNING | Request rejected: Ansible Runner returned a non-JSON response.
+2026-07-18 17:49:35,384 | WARNING | Request rejected: Ansible Runner returned a non-JSON response.
+2026-07-18 17:52:22,688 | INFO | Deployment target=pos-001 file=MarshalPOS-242FFA156998-20260718-175220-08a7435a.xml status=failed execution_id=87bfcca8-2b2c-428f-818a-56f741001e17
+2026-07-19 12:38:36,866 | INFO | Deployment target=pos-001 file=MarshalPOS-242FFA156998-20260719-123822-f6adcdea.xml status=failed execution_id=6e611c79-911d-476d-be08-9a6074592f2d
+2026-07-19 14:08:36,337 | INFO | Deployment target=pos-001 file=MarshalPOS-242FFA156998-20260719-140824-bc7d683c.xml status=failed execution_id=f7cc6520-7c9d-4782-b7d0-3e0b24a6e8d1
+2026-07-19 14:26:12,483 | INFO | Deployment target=pos-001 file=MarshalPOS-242FFA156998-20260719-142559-b2bfa5ad.xml status=failed execution_id=ae03bfa3-e7c9-4da0-8830-4e41d6f3b488
+2026-07-19 14:46:29,181 | INFO | Deployment target=pos-001 file=MarshalPOS-242FFA156998-20260719-144617-f603eb90.xml status=failed execution_id=432ce556-eebb-47a8-b41d-d2e5f33d4aed

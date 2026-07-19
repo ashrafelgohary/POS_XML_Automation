@@ -1,0 +1,20 @@
+Execution ID: 87bfcca8-2b2c-428f-818a-56f741001e17
+Limit: pos-001
+Return code: 4
+
+STDOUT
+======
+
+PLAY [Deploy VISA XML as MarshalPOS.XML and reboot if changed] *****************
+
+TASK [Discover MAC address on POS (eno1)] **************************************
+fatal: [pos-001]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Failed to add the host to the list of known hosts (/home/ansible/.ssh/known_hosts).\r\n+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n\t\t\t╔═╗╦  ╔═╗╦ ╦╔═╗╦ ╦╔═╗\n\t\t\t╠═╣║  ╚═╗╠═╣╠═╣╚╦╝╠═╣\n\t\t\t╩ ╩╩═╝╚═╝╩ ╩╩ ╩ ╩ ╩ ╩\n\nAuthorized Use Only. Transactions may be monitored. By continuing past this  point, you expressly consent to this monitoring.\n\nVer 1.0.4\n\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\nalshaya@10.148.170.36: Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).", "unreachable": true}
+
+PLAY RECAP *********************************************************************
+pos-001                    : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+
+STDERR
+======
+

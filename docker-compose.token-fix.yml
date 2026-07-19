@@ -1,0 +1,8 @@
+services:
+  ansible-runner:
+    environment:
+      RUNNER_API_TOKEN: ${RUNNER_API_TOKEN:?RUNNER_API_TOKEN is required}
+
+  gui-upload:
+    environment:
+      RUNNER_API_TOKEN: ${RUNNER_API_TOKEN:?RUNNER_API_TOKEN is required}

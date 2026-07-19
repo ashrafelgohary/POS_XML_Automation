@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#245b91">
+  <title>{{ app_title }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="brand-line"></div>
+<header class="navbar">
+  <div class="navbar-inner">
+    <div class="brand">
+      <div class="brand-mark">
+        <img src="/static/images/alshayalogo.png" alt="Alshaya">
+      </div>
+      <div>
+        <h1>{{ app_title }}</h1>
+        <p>Infrastructure Automation Portal</p>
+      </div>
+    </div>
+    <span class="environment">{{ environment_name }}</span>
+  </div>
+</header>
+<main class="container">
+  <section class="hero">
+    <span class="eyebrow">Configuration deployment</span>
+    <h2>Controlled POS XML deployment</h2>
+    <p>Upload, validate and deploy POS configuration files through the isolated Ansible automation service.</p>
+    <div class="hero-grid"><div><small>Format</small><strong>XML only</strong></div><div><small>Maximum</small><strong>{{ max_upload_mb }} MB</strong></div><div><small>Runner</small><strong>{{ runner.status }}</strong></div></div>
+  </section>
+  <div class="layout">
+    <section class="card">
+      <div class="card-header"><div><h3>Upload configuration</h3><p>Choose an XML file and approved inventory target.</p></div><span class="status {{ 'online' if runner.online else 'offline' }}"><i></i>{{ 'Runner online' if runner.online else 'Runner offline' }}</span></div>
+      <div class="card-body">
+        {% for category, message in get_flashed_messages(with_categories=true) %}<div class="alert {{ category }}">{{ message }}</div>{% endfor %}
+        <form id="uploadForm" method="post" action="{{ url_for('upload') }}" enctype="multipart/form-data">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+          <label id="dropZone" class="drop-zone" for="xmlFile">
+            <input id="xmlFile" name="xml_file" type="file" accept=".xml,application/xml,text/xml" required>
+            <span class="upload-icon">⇧</span><strong>Drop POS XML file here</strong><span>or click to browse</span><span>Maximum size: {{ max_upload_mb }} MB</span><span id="selectedFile" class="selected-file"></span>
+          </label>
+          <label class="field" for="target"><span>POS device or inventory group</span><input id="target" name="target" type="text" placeholder="Example: pos-001 or approved_group" pattern="[A-Za-z0-9_.:-]{1,100}" maxlength="100" autocomplete="off" required><small>Use an approved host or group from the Ansible inventory.</small></label>
+          <button id="submitButton" class="primary-button" type="submit"><span class="button-label">Validate &amp; Deploy</span><span class="spinner"></span></button>
+        </form>
+      </div>
+    </section>
+    <aside class="side-stack">
+      <section class="card"><div class="card-header"><div><h3>Deployment workflow</h3><p>Controlled processing stages.</p></div></div><div class="card-body workflow">
+        <div class="step"><b>1</b><div><strong>Upload</strong><p>Store XML in the shared incoming volume.</p></div></div>
+        <div class="step"><b>2</b><div><strong>Validate</strong><p>Check size, filename and XML syntax.</p></div></div>
+        <div class="step"><b>3</b><div><strong>Stage</strong><p>Prepare the configuration for the selected target.</p></div></div>
+        <div class="step"><b>4</b><div><strong>Deploy</strong><p>Execute the approved Ansible playbook.</p></div></div>
+      </div></section>
+      <section class="card"><div class="card-header"><div><h3>Application details</h3></div></div><div class="card-body details"><div><span>Company</span><strong>{{ company_name }}</strong></div><div><span>Environment</span><strong>{{ environment_name }}</strong></div><div><span>Runner status</span><strong>{{ runner.status }}</strong></div></div></section>
+    </aside>
+  </div>
+  {% if result %}<section id="deploymentResult" class="card result-card"><div class="card-header"><div><h3>Deployment result</h3><p>Ansible Runner response.</p></div><span class="status {{ 'online' if result.status == 'success' else 'offline' }}">{{ result.status }}</span></div><div class="card-body"><div class="result-grid"><div><small>Target</small><strong>{{ result.target }}</strong></div><div><small>Filename</small><strong>{{ result.filename }}</strong></div><div><small>Execution ID</small><strong>{{ result.execution_id }}</strong></div><div><small>Root element</small><strong>{{ result.root }}</strong></div><div><small>Size</small><strong>{{ result.size }} bytes</strong></div><div><small>SHA-256</small><strong class="hash">{{ result.sha256 }}</strong></div></div>{% if result.output %}<h4>Execution output</h4><pre>{{ result.output }}</pre>{% endif %}</div></section>{% endif %}
+</main>
+<footer>Ashraf Hassan · {{ company_name }} · POS XML Automation · Internal use only</footer>
+<script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+</body></html>

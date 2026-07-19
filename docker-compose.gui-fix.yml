@@ -1,0 +1,35 @@
+services:
+  gui-upload:
+    working_dir: /app/gui_upload
+
+    volumes:
+      - type: bind
+        source: ${PWD}/gui_upload
+        target: /app/gui_upload
+        read_only: true
+
+      - type: bind
+        source: ${PWD}/incoming
+        target: /app/incoming
+
+      - type: bind
+        source: ${PWD}/logs
+        target: /app/logs
+
+    command:
+      - gunicorn
+      - --chdir
+      - /app/gui_upload
+      - --bind
+      - 0.0.0.0:5000
+      - --workers
+      - "2"
+      - --threads
+      - "4"
+      - --timeout
+      - "1900"
+      - --access-logfile
+      - "-"
+      - --error-logfile
+      - "-"
+      - app:app

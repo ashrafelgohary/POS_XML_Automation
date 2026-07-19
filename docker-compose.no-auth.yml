@@ -1,0 +1,4 @@
+services:
+  ansible-runner:
+    environment:
+      DISABLE_API_AUTH: "true"
