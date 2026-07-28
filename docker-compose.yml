@@ -1,4 +1,28 @@
 services:
+  nginx:
+    image: nginx:1.27-alpine
+    container_name: pos-xml-nginx
+    restart: unless-stopped
+
+    ports:
+      - "80:80"
+      - "443:443"
+
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./nginx/ssl:/etc/nginx/ssl:ro
+      - ./nginx/logs:/var/log/nginx
+
+    depends_on:
+      gui-upload:
+        condition: service_healthy
+
+    networks:
+      - pos-automation
+
+    security_opt:
+      - no-new-privileges:true
+
   ansible-runner:
     build:
       context: .
@@ -25,6 +49,10 @@ services:
       - ./pos-configs:/app/pos-configs
       - ./logs:/app/logs
       - ./.vault_pass:/app/.vault_pass:ro
+
+    # No external ports - internal only
+    expose:
+      - "8000"
 
     networks:
       - pos-automation
@@ -55,10 +83,11 @@ services:
       COMPANY_NAME: "Alshaya Group"
       APP_TITLE: "POS XML Automation"
       ENVIRONMENT_NAME: "Production"
-      SESSION_COOKIE_SECURE: "false"
+      SESSION_COOKIE_SECURE: "true"
 
-    ports:
-      - "5000:5000"
+    # No external ports - only Nginx can reach it
+    expose:
+      - "5000"
 
     volumes:
       - ./incoming:/app/incoming

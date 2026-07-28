@@ -1,0 +1,57 @@
+2026/07/28 19:37:43 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/pos.crt": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/pos.crt, r) error:10000080:BIO routines::no such file)
+2026/07/28 19:37:44 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/pos.crt": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/pos.crt, r) error:10000080:BIO routines::no such file)
+2026/07/28 19:37:46 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/pos.crt": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/pos.crt, r) error:10000080:BIO routines::no such file)
+2026/07/28 19:37:47 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/pos.crt": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/pos.crt, r) error:10000080:BIO routines::no such file)
+2026/07/28 19:37:49 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/pos.crt": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/pos.crt, r) error:10000080:BIO routines::no such file)
+2026/07/28 19:37:51 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/pos.crt": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/pos.crt, r) error:10000080:BIO routines::no such file)
+2026/07/28 19:37:55 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/pos.crt": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/pos.crt, r) error:10000080:BIO routines::no such file)
+2026/07/28 19:38:02 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/pos.crt": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/pos.crt, r) error:10000080:BIO routines::no such file)
+2026/07/28 19:38:15 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/pos.crt": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/pos.crt, r) error:10000080:BIO routines::no such file)
+2026/07/28 19:38:41 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/pos.crt": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/pos.crt, r) error:10000080:BIO routines::no such file)
+2026/07/28 19:39:33 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/pos.crt": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/pos.crt, r) error:10000080:BIO routines::no such file)
+2026/07/28 19:40:34 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/pos.crt": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/pos.crt, r) error:10000080:BIO routines::no such file)
+2026/07/28 19:41:34 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/pos.crt": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/pos.crt, r) error:10000080:BIO routines::no such file)
+2026/07/28 19:42:35 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/pos.crt": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/pos.crt, r) error:10000080:BIO routines::no such file)
+2026/07/28 19:43:36 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/pos.crt": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/pos.crt, r) error:10000080:BIO routines::no such file)
+2026/07/28 19:44:37 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/pos.crt": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/pos.crt, r) error:10000080:BIO routines::no such file)
+2026/07/28 19:45:37 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/pos.crt": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/pos.crt, r) error:10000080:BIO routines::no such file)
+2026/07/28 19:46:38 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/pos.crt": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/pos.crt, r) error:10000080:BIO routines::no such file)
+2026/07/28 19:47:39 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/pos.crt": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/pos.crt, r) error:10000080:BIO routines::no such file)
+2026/07/28 19:48:40 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/pos.crt": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/pos.crt, r) error:10000080:BIO routines::no such file)
+2026/07/28 19:49:40 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/pos.crt": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/pos.crt, r) error:10000080:BIO routines::no such file)
+2026/07/28 19:50:41 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/pos.crt": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/pos.crt, r) error:10000080:BIO routines::no such file)
+2026/07/28 19:51:42 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/pos.crt": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/pos.crt, r) error:10000080:BIO routines::no such file)
+2026/07/28 19:52:43 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/pos.crt": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/pos.crt, r) error:10000080:BIO routines::no such file)
+2026/07/28 19:53:43 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/pos.crt": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/pos.crt, r) error:10000080:BIO routines::no such file)
+2026/07/28 19:54:44 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/pos.crt": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/pos.crt, r) error:10000080:BIO routines::no such file)
+2026/07/28 19:55:45 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/pos.crt": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/pos.crt, r) error:10000080:BIO routines::no such file)
+2026/07/28 19:56:45 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/pos.crt": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/pos.crt, r) error:10000080:BIO routines::no such file)
+2026/07/28 19:57:46 [notice] 1#1: using the "epoll" event method
+2026/07/28 19:57:46 [notice] 1#1: nginx/1.27.5
+2026/07/28 19:57:46 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2026/07/28 19:57:46 [notice] 1#1: OS: Linux 6.8.0-136-generic
+2026/07/28 19:57:46 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:524288
+2026/07/28 19:57:46 [notice] 1#1: start worker processes
+2026/07/28 19:57:46 [notice] 1#1: start worker process 20
+2026/07/28 19:57:46 [notice] 1#1: start worker process 21
+2026/07/28 20:02:40 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2026/07/28 20:02:40 [notice] 20#20: gracefully shutting down
+2026/07/28 20:02:40 [notice] 20#20: exiting
+2026/07/28 20:02:40 [notice] 21#21: gracefully shutting down
+2026/07/28 20:02:40 [notice] 21#21: exiting
+2026/07/28 20:02:40 [notice] 21#21: exit
+2026/07/28 20:02:40 [notice] 20#20: exit
+2026/07/28 20:02:40 [notice] 1#1: signal 17 (SIGCHLD) received from 21
+2026/07/28 20:02:40 [notice] 1#1: worker process 21 exited with code 0
+2026/07/28 20:02:40 [notice] 1#1: signal 29 (SIGIO) received
+2026/07/28 20:02:40 [notice] 1#1: signal 17 (SIGCHLD) received from 20
+2026/07/28 20:02:40 [notice] 1#1: worker process 20 exited with code 0
+2026/07/28 20:02:40 [notice] 1#1: exit
+2026/07/28 20:03:49 [notice] 1#1: using the "epoll" event method
+2026/07/28 20:03:49 [notice] 1#1: nginx/1.27.5
+2026/07/28 20:03:49 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2026/07/28 20:03:49 [notice] 1#1: OS: Linux 6.8.0-136-generic
+2026/07/28 20:03:49 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:524288
+2026/07/28 20:03:49 [notice] 1#1: start worker processes
+2026/07/28 20:03:49 [notice] 1#1: start worker process 20
+2026/07/28 20:03:49 [notice] 1#1: start worker process 21
