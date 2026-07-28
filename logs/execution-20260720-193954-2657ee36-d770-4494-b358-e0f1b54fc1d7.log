@@ -1,0 +1,61 @@
+Execution ID: 2657ee36-d770-4494-b358-e0f1b54fc1d7
+Limit: pos-001
+Return code: 0
+
+STDOUT
+======
+
+PLAY [Deploy VISA XML as MarshalPOS.XML and reboot if changed] *****************
+
+TASK [Discover MAC address on POS (eno1)] **************************************
+ok: [pos-001]
+
+TASK [Normalize MAC] ***********************************************************
+ok: [pos-001]
+
+TASK [Ensure staged XML exists on controller] **********************************
+ok: [pos-001 -> localhost]
+
+TASK [Fail if bank XML missing for this POS] ***********************************
+skipping: [pos-001]
+
+TASK [Ensure destination directory exists on POS] ******************************
+ok: [pos-001]
+
+TASK [Check if current config exists on POS] ***********************************
+ok: [pos-001]
+
+TASK [Backup current file to controller (fetch)] *******************************
+fatal: [pos-001]: FAILED! => {"msg": "Unable to create local directories(/app/ansible/backups/pos-configs/pos-001): [Errno 30] Read-only file system: b'/app/ansible/backups'"}
+...ignoring
+
+TASK [Deploy XML as MarshalPOS.XML] ********************************************
+changed: [pos-001]
+
+TASK [Set owner to epos] *******************************************************
+changed: [pos-001]
+
+TASK [Initiate reboot] *********************************************************
+changed: [pos-001]
+
+TASK [Wait for POS to be reachable after reboot] *******************************
+ok: [pos-001]
+
+TASK [Summary] *****************************************************************
+ok: [pos-001] => {
+    "msg": "pos-001 (MAC 242FFA156998) → /var/epos/bin/MarshalPOS.XML changed=True"
+}
+
+PLAY RECAP *********************************************************************
+pos-001                    : ok=11   changed=3    unreachable=0    failed=0    skipped=1    rescued=0    ignored=1   
+
+
+
+STDERR
+======
+[WARNING]: Platform linux on host pos-001 is using the discovered Python
+interpreter at /usr/bin/python3.6, but future installation of another Python
+interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-
+core/2.16/reference_appendices/interpreter_discovery.html for more information.
+

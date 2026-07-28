@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment/>
+<entry key="POS.DATABIT">8</entry>
+<entry key="POS.BAUD">19200</entry>
+<entry key="POS.PARITY">0</entry>
+<entry key="POS.CTIMEOUT">60</entry>
+<entry key="POS.MacKey">A00E114E6B364D8A5B957E87F2156969</entry>
+<entry key="POS.STOPBIT">1</entry>
+<entry key="POS.ATIMEOUT">5</entry>
+<entry key="POS.TRACE">1</entry>
+<entry key="POS.TRACELOG">/var/epos/bin/</entry>
+<entry key="POSRouter.CRETRY">3</entry>
+<entry key="POS.STIMEOUT">30</entry>
+<entry key="POS.RTIMEOUT">30</entry>
+<entry key="POS.UPLOADTIMEOUT">300</entry>
+<entry key="POS.TXNTIMEOUT">180</entry>
+<entry key="POS.PORT">/dev/ttyS0</entry>
+<entry key="POSRouter.PTID">50641909</entry>
+<entry key="POSRouter.TID">50641909</entry>
+</properties>

@@ -1,0 +1,14 @@
+Execution ID: f2231154-d06a-475d-bf39-1619151fb779
+Limit: pos-001
+Return code: 1
+
+STDOUT
+======
+
+
+STDERR
+======
+[WARNING]: Error getting vault password file (default): The vault password file
+/app/.vault_pass was not found
+ERROR! The vault password file /app/.vault_pass was not found
+

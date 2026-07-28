@@ -1,0 +1,55 @@
+Execution ID: 1b33fb99-77f9-49f6-844c-9ef0a4922d69
+Limit: 9913-till88
+Return code: 0
+
+STDOUT
+======
+
+PLAY [Deploy VISA XML as MarshalPOS.XML and reboot if changed] *****************
+
+TASK [Discover MAC address on POS (eno1)] **************************************
+ok: [9913-till88]
+
+TASK [Normalize MAC] ***********************************************************
+ok: [9913-till88]
+
+TASK [Ensure staged XML exists on controller] **********************************
+ok: [9913-till88 -> localhost]
+
+TASK [Fail if bank XML missing for this POS] ***********************************
+skipping: [9913-till88]
+
+TASK [Ensure destination directory exists on POS] ******************************
+changed: [9913-till88]
+
+TASK [Check if current config exists on POS] ***********************************
+ok: [9913-till88]
+
+TASK [Backup current file to controller (fetch)] *******************************
+skipping: [9913-till88]
+
+TASK [Deploy XML as MarshalPOS.XML] ********************************************
+changed: [9913-till88]
+
+TASK [Set owner to epos] *******************************************************
+changed: [9913-till88]
+
+TASK [Initiate reboot] *********************************************************
+changed: [9913-till88]
+
+TASK [Wait for POS to be reachable after reboot] *******************************
+ok: [9913-till88]
+
+TASK [Summary] *****************************************************************
+ok: [9913-till88] => {
+    "msg": "9913-till88 (MAC 000C295889E4) → /var/epos/bin/MarshalPOS.XML changed=True"
+}
+
+PLAY RECAP *********************************************************************
+9913-till88                : ok=10   changed=4    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+
+
+
+STDERR
+======
+

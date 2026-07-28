@@ -1,0 +1,16 @@
+Execution ID: e8aa72bc-5217-46f2-a569-8e4ae99e3a83
+Limit: pos-001
+Return code: 1
+
+STDOUT
+======
+
+
+STDERR
+======
+[WARNING]: Error in vault password file loading (default): Problem running
+vault password script /app/.vault_pass ([Errno 13] Permission denied:
+'/app/.vault_pass'). If this is not a script, remove the executable bit from
+the file.
+ERROR! Problem running vault password script /app/.vault_pass ([Errno 13] Permission denied: '/app/.vault_pass'). If this is not a script, remove the executable bit from the file.
+

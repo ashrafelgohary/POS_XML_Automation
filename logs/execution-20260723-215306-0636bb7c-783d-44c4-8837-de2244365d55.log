@@ -1,0 +1,20 @@
+Execution ID: 0636bb7c-783d-44c4-8837-de2244365d55
+Limit: pos-001
+Return code: 4
+
+STDOUT
+======
+
+PLAY [Deploy VISA XML as MarshalPOS.XML and reboot if changed] *****************
+
+TASK [Discover MAC address on POS (eno1)] **************************************
+fatal: [pos-001]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.148.170.36 port 22: Connection timed out", "unreachable": true}
+
+PLAY RECAP *********************************************************************
+pos-001                    : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+
+STDERR
+======
+

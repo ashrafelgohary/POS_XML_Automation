@@ -1,0 +1,20 @@
+Execution ID: 39134e9e-b6aa-4e68-8b68-661d201ce7cb
+Limit: 9913-till88
+Return code: 2
+
+STDOUT
+======
+
+PLAY [Deploy VISA XML as MarshalPOS.XML and reboot if changed] *****************
+
+TASK [Discover MAC address on POS (eno1)] **************************************
+fatal: [9913-till88]: FAILED! => {"ansible_facts": {"discovered_interpreter_python": "/usr/bin/python3"}, "changed": false, "cmd": "cat /sys/class/net/eno1/address", "delta": "0:00:00.006564", "end": "2026-07-24 00:54:01.444429", "failed_when_result": true, "msg": "non-zero return code", "rc": 1, "start": "2026-07-24 00:54:01.437865", "stderr": "cat: /sys/class/net/eno1/address: No such file or directory", "stderr_lines": ["cat: /sys/class/net/eno1/address: No such file or directory"], "stdout": "", "stdout_lines": []}
+
+PLAY RECAP *********************************************************************
+9913-till88                : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+
+
+STDERR
+======
+

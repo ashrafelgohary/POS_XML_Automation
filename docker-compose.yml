@@ -3,6 +3,7 @@ services:
     build:
       context: .
       dockerfile: ansible/Dockerfile
+    image: pos-xml-automation-ansible:latest
     container_name: pos-xml-ansible
     restart: unless-stopped
 
@@ -14,42 +15,28 @@ services:
       INCOMING_DIRECTORY: /app/incoming/new
       LOG_DIRECTORY: /app/logs
       RUNNER_API_TOKEN: ${RUNNER_API_TOKEN:?RUNNER_API_TOKEN is required}
-      ANSIBLE_HOST_KEY_CHECKING: "True"
+      ANSIBLE_HOST_KEY_CHECKING: "False"
 
     volumes:
-      - ./ansible:/app/ansible:ro
-      - ./scripts:/app/scripts:ro
-      - ./inventory:/app/inventory:ro
+      - ./ansible:/app/ansible
+      - ./scripts:/app/scripts
+      - ./inventory:/app/inventory
       - ./incoming:/app/incoming
       - ./pos-configs:/app/pos-configs
       - ./logs:/app/logs
-      - ./secrets/known_hosts:/home/ansible/.ssh/known_hosts:ro
+      - ./.vault_pass:/app/.vault_pass:ro
 
     networks:
       - pos-automation
 
-    healthcheck:
-      test:
-        - CMD
-        - python
-        - -c
-        - >-
-          import urllib.request;
-          urllib.request.urlopen(
-          'http://localhost:8000/health',
-          timeout=5)
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 10s
-
     security_opt:
-      - no-new-privileges:false
+      - no-new-privileges:true
 
   gui-upload:
     build:
-      context: ./gui_upload
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: gui_upload/Dockerfile
+    image: pos-xml-automation-gui:latest
     container_name: pos-xml-gui
     restart: unless-stopped
 
@@ -60,9 +47,15 @@ services:
     environment:
       ANSIBLE_API_URL: http://ansible-runner:8000
       RUNNER_API_TOKEN: ${RUNNER_API_TOKEN:?RUNNER_API_TOKEN is required}
+      FLASK_SECRET_KEY: ${FLASK_SECRET_KEY:?FLASK_SECRET_KEY is required}
       UPLOAD_DIRECTORY: /app/incoming/new
-      FLASK_SECRET_KEY: ${FLASK_SECRET_KEY}
-      MAX_CONTENT_LENGTH: "10485760"
+      LOG_DIRECTORY: /app/logs
+      MAX_UPLOAD_MB: "10"
+      REQUEST_TIMEOUT_SECONDS: "1800"
+      COMPANY_NAME: "Alshaya Group"
+      APP_TITLE: "POS XML Automation"
+      ENVIRONMENT_NAME: "Production"
+      SESSION_COOKIE_SECURE: "false"
 
     ports:
       - "5000:5000"
@@ -77,11 +70,7 @@ services:
     security_opt:
       - no-new-privileges:true
 
-    read_only: true
-
-    tmpfs:
-      - /tmp
-
 networks:
   pos-automation:
     driver: bridge
+    name: pos-automation

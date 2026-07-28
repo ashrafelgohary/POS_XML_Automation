@@ -1,0 +1,14 @@
+Execution ID: 4b6da9f2-e96b-4b4b-9a36-97ed8b3a31ed
+Limit: pos-001
+Return code: 4
+
+STDOUT
+======
+
+PLAY [Deploy VISA XML as MarshalPOS.XML and reboot if changed] *****************
+
+
+STDERR
+======
+ERROR! Decryption failed (no vault secrets were found that could decrypt) on /app/inventory/group_vars/all/vault.yml
+

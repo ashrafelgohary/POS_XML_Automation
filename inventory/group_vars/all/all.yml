@@ -1,0 +1,41 @@
+# Where staged XMLs live on the control machine (this repo)
+pos_configs_dir: "{{ playbook_dir | dirname }}/pos-configs"
+
+# Final destination on each POS (same file name everywhere)
+pos_config_dest: "/var/epos/bin/MarshalPOS.XML"
+
+# Single SSH user for all POS:
+#ansible_user: "alshaya"
+ansible_user: "ashraf"
+
+
+
+# SSH password (via Vault - see below)
+ansible_password: "{{ vault_ssh_password }}"
+
+# Use SSH keys; set your private key path if not default:
+# ansible_ssh_private_key_file: "~/.ssh/id_ed25519"
+
+# For first runs in closed networks; consider removing later for security:
+ansible_ssh_common_args: "-o StrictHostKeyChecking=no"
+
+# Privilege escalation
+become: true
+become_method: sudo
+become_user: root
+# If sudo requires a password, set it via Ansible Vault instead of plain text:
+# ansible_become_password: !vault |
+#
+ansible_become_password: "{{ vault_ssh_password }}"
+#   $ANSIBLE_VAULT;1.1;AES256;... (use `ansible-vault encrypt_string`)
+
+# MAC command (Linux): read eno1's MAC directly
+#pos_mac_cmd: "cat /sys/class/net/eno1/address"
+pos_mac_cmd: "cat /sys/class/net/ens33/address"
+
+# Policy: reboot only when the file actually changed
+reboot_on_change: true
+
+# Concurrency
+ansible_forks: 20
+

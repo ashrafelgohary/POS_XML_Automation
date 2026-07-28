@@ -17,7 +17,7 @@
 <entry key="POS.UPLOADTIMEOUT">300</entry>
 <entry key="POS.TXNTIMEOUT">180</entry>
 <entry key="POS.PORT">/dev/ttyS0</entry>
-<entry key="POSRouter.PTID">50641900</entry>
-<entry key="POSRouter.TID">50641900</entry>
+<entry key="POSRouter.PTID">50641902</entry>
+<entry key="POSRouter.TID">50641902</entry>
 </properties>
 

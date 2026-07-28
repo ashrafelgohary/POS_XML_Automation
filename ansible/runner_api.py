@@ -179,7 +179,9 @@ def run_playbook(
         str(INVENTORY_FILE),
         str(PLAYBOOK_FILE),
         "--limit",
-        request.limit
+        request.limit,
+        "--vault-password-file",
+        "/app/.vault_pass",
     ]
 
     ansible_result = execute_command(ansible_command)
