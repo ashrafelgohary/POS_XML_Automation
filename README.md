@@ -1,10 +1,28 @@
-# POS XML Automation Platform
+<div align="center">
+  
+# 🚀 POS XML Automation Platform
 
-> Centralized, containerized configuration management for Point-of-Sale (POS) terminals — powered by **Ansible**, a **Flask** web GUI, and an **Nginx** reverse proxy.
+### Centralized, containerized configuration management for Point-of-Sale (POS) terminals 
+— powered by **Ansible**, a **Flask** web GUI, and an **Nginx** reverse proxy.
 
 ---
 
-## Table of Contents
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Ansible](https://img.shields.io/badge/Ansible-EE0000?style=for-the-badge&logo=ansible&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![Oracle Linux](https://img.shields.io/badge/Oracle%20Linux-F80000?style=for-the-badge&logo=oracle&logoColor=white)
+![NGINX](https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
+![XML](https://img.shields.io/badge/XML-Automation-FF6600?style=for-the-badge)
+
+</div>
+
+---
+
+#  🎯 Table of Contents
 
 1. [Overview](#overview)
 2. [Key Features](#key-features)
@@ -25,7 +43,7 @@
 
 ---
 
-## Overview
+## 📖 Overview
 
 The **POS XML Automation Platform** provides a single, secure, web-based control point to push standardized XML configuration files (`MarshalPOS.XML`) to a fleet of Linux-based POS terminals across retail stores.
 
