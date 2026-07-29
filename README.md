@@ -22,6 +22,45 @@
 
 ---
 
+## Visual Project Overview
+
+<p align="center">
+  <img src="assets/enterprise-pos-automation-workflow.gif" alt="Enterprise POS Configuration Automation Workflow" width="100%">
+</p>
+
+<p align="center">
+  <b>Enterprise POS Configuration Automation Workflow</b><br>
+  <sub>A governed deployment journey from source control to the retail POS estate.</sub>
+</p>
+
+---
+
+## Application Dashboard
+
+<p align="center">
+  <img src="assets/pos-dashboard.png" alt="POS XML Automation Dashboard" width="100%">
+</p>
+
+<p align="center">
+  <b>POS XML Automation Portal</b><br>
+  <sub>Centralized interface for uploading, validating, staging, and deploying POS XML configuration files.</sub>
+</p>
+
+---
+
+## Project Demo
+
+<p align="center">
+  <img src="assets/pos-xml-automation-demo.gif" alt="POS XML Automation Project Demo" width="100%">
+</p>
+
+<p align="center">
+  <b>Animated Project Demo</b><br>
+  <sub>Showcasing the controlled XML deployment workflow using Docker, Flask, Ansible, and Linux POS targets.</sub>
+</p>
+
+---
+
 #  🎯 Table of Contents
 
 1. [Overview](#overview)
